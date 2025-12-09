@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Task List</h2>  
+    <a href="{% url 'task_create' %}" class="btn btn-success my-2">create new task</a>
+    <div class="list-group">
+        {% for task in tasks %}
+            <a href="{% url 'task_detail' task.pk %}" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">{{ task.title }}</h5>
+                <p class="mb-1">{{ task.description }}</p>
+                <small>Deadline: {{ task.deadline }}</small>
+            </a>
+            
+        {% endfor %}
+    </div>
+{% endblock content %}
