@@ -8,6 +8,14 @@
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="position-absolute top-0 end-0 m-3">
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}" class="btn btn-info" >Logout</a>
+{% else %}
+    <a href="{% url 'login' %}" class="btn btn-info">Login</a>
+    <a href="{% url 'register' %}" class="btn btn-info">Register</a>
+{% endif %}
+    </div>
 <div class="container mt-4">
     {% block content %}
 

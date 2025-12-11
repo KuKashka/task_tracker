@@ -7,4 +7,5 @@
     <p><strong>Status:</strong> {{ task.status }}</p>
     <p><strong>Priority:</strong> {{ task.priority }}</p>
     <a href="{% url 'task_edit' task.pk %}" class="btn btn-success my-2">Редагувати завдання</a>
+    <a href="{% url 'task_delete' task.pk %}" class="btn btn-danger my-2">Видалити завдання</a>
 {% endblock content %}
