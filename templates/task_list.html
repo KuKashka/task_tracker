@@ -2,6 +2,15 @@
 {% block content %}
     <h2>Task List</h2>  
     <a href="{% url 'task_create' %}" class="btn btn-success my-2">create new task</a>
+    <form action="" method="get" class ="d-flex gap-2 mb-3 align-items-center ">
+        <select class="form-select" aria-label="Default select example" name="status_filter" style="width: 200px; display: inline-block; margin-left: 10px;">
+            <option value="">Обери статус</option>
+            <option value="to do">Новий</option>
+            <option value="in progress">В процесі</option>
+            <option value="completed">Завершено</option>
+        </select>
+        <button type="submit" class="btn btn-primary mt-2">Фільтрувати</button>
+    </form>
     <div class="list-group">
         {% for task in tasks %}
             <a href="{% url 'task_detail' task.pk %}" class="list-group-item list-group-item-action">
